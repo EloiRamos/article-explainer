@@ -1,5 +1,5 @@
 from typing import List
-from langchain_community.document_loaders import PyPDFLoader, TextLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema import Document
 
@@ -16,8 +16,6 @@ class ContentLoader:
         """Load and split content from a file."""
         if file_path.endswith(".pdf"):
             loader = PyPDFLoader(file_path)
-        elif file_path.endswith(".txt"):
-            loader = TextLoader(file_path)
         else:
             raise ValueError(f"Unsupported file format: {file_path}")
 

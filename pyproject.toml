@@ -15,7 +15,8 @@ dependencies = [
     "langchain_community",
     "langchain_text_splitters",
     "langchain",
+    "streamlit",
+    "pypdf"
 ]
 
 [tool.uv]
-

@@ -1,11 +1,12 @@
-from explainer.prompts import SOLUTIONS_ARCHITECT_SYSTEM_PROMPT, ANALOGY_EXPERT_SYSTEM_PROMPT, \
-    INFORMATION_EXPLAINER_SYSTEM_PROMPT, INFORMATION_SUMMARIZER_SYSTEM_PROMPT
+from explainer.prompts import (
+    SOLUTIONS_ARCHITECT_SYSTEM_PROMPT,
+    ANALOGY_EXPERT_SYSTEM_PROMPT,
+    INFORMATION_EXPLAINER_SYSTEM_PROMPT,
+    INFORMATION_SUMMARIZER_SYSTEM_PROMPT,
+)
 from explainer.service.config import get_chat_model
-from explainer.service.content_loader import ContentLoader
 from langgraph.prebuilt import create_react_agent
 from langgraph_swarm import create_handoff_tool, create_swarm
-from langchain_core.messages import HumanMessage
-from explainer.state import ExplainerState
 
 model = get_chat_model()
 
@@ -64,35 +65,4 @@ agent_swarm = create_swarm(
     default_active_agent="information_explainer",
 )
 
-
-def main():
-    loader = ContentLoader()
-
-    document_content = loader.get_text(
-        "/Users/duarte/Documents/Development/article-explainer/article-explainer/docs/small_language_models_summary.txt",
-        max_chunks=10,
-    )
-
-    app = agent_swarm.compile()
-
-    context_message = f"[Document content] : {document_content}"
-
-    state = ExplainerState(
-        messages=[{"role": "user", "content": context_message}],
-    )
-
-    while True:
-        user_input = input("\nYou: ")
-        if user_input.lower() in {"exit", "quit"}:
-            break
-
-        state["messages"].append(HumanMessage(content=user_input))
-
-        state = app.invoke(state)
-
-        last_msg = state["messages"][-1]
-        print("\nAssistant:", last_msg.content)
-
-
-if __name__ == "__main__":
-    main()
+app = agent_swarm.compile()
