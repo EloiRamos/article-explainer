@@ -19,20 +19,13 @@ explanations, analogies, and summaries.
 
 ### Installation
 
-1. Clone the repository:
-
-```bash
-git clone <repository-url>
-cd article-explainer
-```
-
-2. Install dependencies:
+1. Install dependencies:
 
 ```bash
 uv sync
 ```
 
-3. Set up environment variables:
+2. Set up environment variables:
 
 ```bash
 export OPENAI_API_KEY="your-api-key-here"
