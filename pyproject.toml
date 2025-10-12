@@ -18,6 +18,7 @@ dependencies = [
     "streamlit",
     "pypdf",
     "langchain_ollama",
+    "streamlit-pdf-viewer>=0.0.26",
 ]
 
 [tool.uv]

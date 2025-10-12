@@ -6,14 +6,20 @@ explanations, analogies, and summaries.
 ## Features
 
 - **PDF Upload & Processing**: Upload technical documents and get instant analysis
-- **Multi-Expert System**: Four specialized agents work together to provide comprehensive explanations:
-    - **Solutions Architect**: Technical implementations and code examples
-    - **Information Explainer**: Step-by-step breakdowns and detailed explanations
-    - **Analogy Expert**: Relatable comparisons for complex concepts
-    - **Information Summarizer**: Concise summaries and key takeaways
+- **Multi-Expert System**: Four specialized agents work together to provide comprehensive explanations
+- **PDF Viewer**: See your PDF within the main page for added context
 - **Interactive Chat Interface**: Ask questions and get tailored responses
 - **Smart Collaboration**: Agents automatically work together for complex queries
 - **Document Analysis Tools**: Extract key terms, analyze structure, and assess complexity
+
+## Application
+
+### Usage explanation and interface
+![img.png](img.png)
+
+### Interactive chat with the agentic team
+![img_1.png](img_1.png)
+
 
 ## Quick Start
 

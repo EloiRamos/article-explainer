@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import tempfile
 from typing import Optional
+from streamlit_pdf_viewer import pdf_viewer
 
 from explainer.graph import app
 from explainer.service.content_loader import ContentLoader
@@ -35,22 +36,24 @@ def _process_pdf_upload(uploaded_file) -> Optional[str]:
 def main():
     st.set_page_config(page_title="Article Explainer", page_icon="📚", layout="wide")
 
-    st.title("📚 Article Explainer")
-
     if "messages" not in st.session_state:
         st.session_state.messages = []
     if "document_content" not in st.session_state:
         st.session_state.document_content = None
     if "agent_state" not in st.session_state:
         st.session_state.agent_state = None
+    if "uploaded_pdf_bytes" not in st.session_state:
+        st.session_state.uploaded_pdf_bytes = None
 
     with st.sidebar:
-        st.header("📄 Document Upload")
+        st.header("📚 Article Explainer")
         uploaded_file = st.file_uploader(type="pdf", label="Document Uploader")
 
         if uploaded_file is not None:
             if st.session_state.document_content is None:
                 with st.spinner("Processing PDF..."):
+                    st.session_state.uploaded_pdf_bytes = uploaded_file.read()
+
                     document_content = _process_pdf_upload(uploaded_file)
                     if document_content:
                         st.session_state.document_content = document_content
@@ -65,13 +68,15 @@ def main():
                             st.session_state.messages = [
                                 {
                                     "role": "assistant",
-                                    "content": "Hello there! I have processed your PDF document. What can I help you with?",
+                                    "content": "Hello, what can I help you with?",
                                 }
                             ]
-            else:
-                st.info(f"Uploaded document: {uploaded_file.name}")
 
     if st.session_state.document_content is not None:
+        with st.expander("📖 View document", expanded=False):
+            if st.session_state.uploaded_pdf_bytes:
+                pdf_viewer(st.session_state.uploaded_pdf_bytes, height=600)
+
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
@@ -109,7 +114,6 @@ def main():
                         )
 
     else:
-        st.info("Please upload a PDF document to get started.")
 
         with st.expander("ℹ️ How to use this app"):
             st.markdown("""
