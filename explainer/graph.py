@@ -1,5 +1,4 @@
 from explainer.prompts import (
-    PLANNER_SYSTEM_PROMPT,
     DEVELOPER_SYSTEM_PROMPT,
     SUMMARIZER_SYSTEM_PROMPT,
     EXPLAINER_SYSTEM_PROMPT,
@@ -12,10 +11,6 @@ from langgraph_swarm import create_handoff_tool, create_swarm
 
 model = get_chat_model()
 
-transfer_to_planner = create_handoff_tool(
-    agent_name="planner",
-    description="Tool to hand control back to the Planner for coordination and final report generation.",
-)
 transfer_to_developer = create_handoff_tool(
     agent_name="developer",
     description="Tool to hand control to the Developer for code examples and technical implementations.",
@@ -37,76 +32,60 @@ transfer_to_vulnerability_expert = create_handoff_tool(
     description="Tool to hand control to the Vulnerability Expert for analyzing potential weaknesses in arguments and methodology.",
 )
 
-# Instances of the agents with the tools for transferring to other agents.
-planner = create_react_agent(
-    model,
-    prompt=PLANNER_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_developer,
-        transfer_to_summarizer,
-        transfer_to_explainer,
-        transfer_to_analogy_creator,
-        transfer_to_vulnerability_expert,
-    ],
-    name="planner",
-)
+# All agents get all transfer tools
+generic_tools = [
+    transfer_to_developer,
+    transfer_to_summarizer,
+    transfer_to_explainer,
+    transfer_to_analogy_creator,
+    transfer_to_vulnerability_expert,
+]
 
 developer = create_react_agent(
     model,
     prompt=DEVELOPER_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_planner,
-    ],
+    tools=generic_tools,
     name="developer",
 )
 
 summarizer = create_react_agent(
     model,
     prompt=SUMMARIZER_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_planner,
-    ],
+    tools=generic_tools,
     name="summarizer",
 )
 
 explainer = create_react_agent(
     model,
     prompt=EXPLAINER_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_planner,
-    ],
+    tools=generic_tools,
     name="explainer",
 )
 
 analogy_creator = create_react_agent(
     model,
     prompt=ANALOGY_CREATOR_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_planner,
-    ],
+    tools=generic_tools,
     name="analogy_creator",
 )
 
 vulnerability_expert = create_react_agent(
     model,
     prompt=VULNERABILITY_EXPERT_SYSTEM_PROMPT,
-    tools=[
-        transfer_to_planner,
-    ],
+    tools=generic_tools,
     name="vulnerability_expert",
 )
 
-# This is our swarm, where we define all the agents and the one that starts each interaction.
+# Swarm with default agent as explainer
 agent_swarm = create_swarm(
     [
-        planner,
         developer,
         summarizer,
         explainer,
         analogy_creator,
         vulnerability_expert,
     ],
-    default_active_agent="planner",
+    default_active_agent="explainer",
 )
 
 app = agent_swarm.compile()
