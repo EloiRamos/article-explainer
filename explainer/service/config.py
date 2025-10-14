@@ -10,6 +10,7 @@ def get_chat_model(model_name: str = "openai:gpt-4.1-mini"):
     api_key = os.getenv("OPENAI_API_KEY")
 
     if not api_key:
+        # This is the solution for the local setup, in case you want to host your model locally.
         return ChatOllama(
             model="qwen3:8b",
             base_url="http://localhost:11434"

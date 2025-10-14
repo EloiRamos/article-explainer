@@ -14,30 +14,30 @@ model = get_chat_model()
 
 transfer_to_planner = create_handoff_tool(
     agent_name="planner",
-    description="Hand control back to the Planner for coordination and final report generation.",
+    description="Tool to hand control back to the Planner for coordination and final report generation.",
 )
 transfer_to_developer = create_handoff_tool(
     agent_name="developer",
-    description="Hand control to the Developer for code examples and technical implementations.",
+    description="Tool to hand control to the Developer for code examples and technical implementations.",
 )
 transfer_to_summarizer = create_handoff_tool(
     agent_name="summarizer",
-    description="Hand control to the Summarizer for concise summaries, key points, and TL;DR responses.",
+    description="Tool to hand control to the Summarizer for concise summaries, key points, and TL;DR responses.",
 )
 transfer_to_explainer = create_handoff_tool(
     agent_name="explainer",
-    description="Hand control to the Explainer for detailed step-by-step breakdowns and educational explanations.",
+    description="Tool to hand control to the Explainer for detailed step-by-step breakdowns and educational explanations.",
 )
 transfer_to_analogy_creator = create_handoff_tool(
     agent_name="analogy_creator",
-    description="Hand control to the Analogy Creator for creating relatable analogies and metaphors for complex concepts.",
+    description="Tool to hand control to the Analogy Creator for creating relatable analogies and metaphors for complex concepts.",
 )
 transfer_to_vulnerability_expert = create_handoff_tool(
     agent_name="vulnerability_expert",
-    description="Hand control to the Vulnerability Expert for analyzing potential weaknesses in arguments and methodology.",
+    description="Tool to hand control to the Vulnerability Expert for analyzing potential weaknesses in arguments and methodology.",
 )
 
-# Create agents with needed tools and handoff capabilities
+# Instances of the agents with the tools for transferring to other agents.
 planner = create_react_agent(
     model,
     prompt=PLANNER_SYSTEM_PROMPT,
@@ -96,6 +96,7 @@ vulnerability_expert = create_react_agent(
     name="vulnerability_expert",
 )
 
+# This is our swarm, where we define all the agents and the one that starts each interaction.
 agent_swarm = create_swarm(
     [
         planner,

@@ -5,7 +5,7 @@ from langchain.schema import Document
 
 
 class ContentLoader:
-    """Loads and prepares text content from supported file formats."""
+    """Loads and prepares text content from .pdf documents using PyPDF."""
 
     def __init__(self, chunk_size: int = 1000, chunk_overlap: int = 100):
         self.splitter = RecursiveCharacterTextSplitter(

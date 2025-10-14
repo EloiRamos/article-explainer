@@ -7,7 +7,7 @@ from streamlit_pdf_viewer import pdf_viewer
 from explainer.graph import app
 from explainer.service.content_loader import ContentLoader
 from langchain_core.messages import HumanMessage
-from explainer.state import ExplainerState
+from langgraph_swarm import SwarmState
 
 
 def _process_pdf_upload(uploaded_file) -> Optional[str]:
@@ -60,7 +60,7 @@ def main():
                         st.toast("PDF processed with success")
 
                         context_message = f"[Document content] : {document_content}"
-                        st.session_state.agent_state = ExplainerState(
+                        st.session_state.agent_state = SwarmState(
                             messages=[{"role": "user", "content": context_message}],
                         )
 
