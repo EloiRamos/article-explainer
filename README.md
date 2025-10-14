@@ -3,7 +3,8 @@
 An intelligent document analysis tool that helps you understand complex technical articles through AI-powered
 explanations, analogies, and summaries. A good introduction to the Swarm Architecture from LangChain.
 
-More at: https://langchain-ai.github.io/langgraph/agents/multi-agent/#swarm
+Article I wrote about Swarm at: https://medium.com/@caldasdcardoso/swarm-architecture-agents-in-langgraph-b8b1b53c61b3
+LangChain documentation at: https://langchain-ai.github.io/langgraph/agents/multi-agent/#swarm
 
 ## Features
 
