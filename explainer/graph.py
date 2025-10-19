@@ -32,47 +32,63 @@ transfer_to_vulnerability_expert = create_handoff_tool(
     description="Tool to hand control to the Vulnerability Expert for analyzing potential weaknesses in arguments and methodology.",
 )
 
-# All agents get all transfer tools
-generic_tools = [
-    transfer_to_developer,
-    transfer_to_summarizer,
-    transfer_to_explainer,
-    transfer_to_analogy_creator,
-    transfer_to_vulnerability_expert,
-]
-
 developer = create_react_agent(
     model,
     prompt=DEVELOPER_SYSTEM_PROMPT,
-    tools=generic_tools,
+    tools=[
+        transfer_to_summarizer,
+        transfer_to_explainer,
+        transfer_to_analogy_creator,
+        transfer_to_vulnerability_expert,
+    ],
     name="developer",
 )
 
 summarizer = create_react_agent(
     model,
     prompt=SUMMARIZER_SYSTEM_PROMPT,
-    tools=generic_tools,
+    tools=[
+        transfer_to_developer,
+        transfer_to_explainer,
+        transfer_to_analogy_creator,
+        transfer_to_vulnerability_expert,
+    ],
     name="summarizer",
 )
 
 explainer = create_react_agent(
     model,
     prompt=EXPLAINER_SYSTEM_PROMPT,
-    tools=generic_tools,
+    tools=[
+        transfer_to_developer,
+        transfer_to_summarizer,
+        transfer_to_analogy_creator,
+        transfer_to_vulnerability_expert,
+    ],
     name="explainer",
 )
 
 analogy_creator = create_react_agent(
     model,
     prompt=ANALOGY_CREATOR_SYSTEM_PROMPT,
-    tools=generic_tools,
+    tools=[
+        transfer_to_developer,
+        transfer_to_summarizer,
+        transfer_to_explainer,
+        transfer_to_vulnerability_expert,
+    ],
     name="analogy_creator",
 )
 
 vulnerability_expert = create_react_agent(
     model,
     prompt=VULNERABILITY_EXPERT_SYSTEM_PROMPT,
-    tools=generic_tools,
+    tools=[
+        transfer_to_developer,
+        transfer_to_summarizer,
+        transfer_to_explainer,
+        transfer_to_analogy_creator,
+    ],
     name="vulnerability_expert",
 )
 
