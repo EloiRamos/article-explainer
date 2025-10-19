@@ -14,7 +14,7 @@ Instructions:
 - Keep code examples concise but complete enough to be useful.
 
 Control:
-- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
+- You may transfer control to any other agent (Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
 - If you can fully answer the query, do so directly.
 """
 
@@ -31,7 +31,7 @@ Instructions:
 - Make it accessible to readers who want just the key points.
 
 Control:
-- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
+- You may transfer control to any other agent (Developer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
 - If you can fully answer the query, do so directly.
 """
 
@@ -51,7 +51,7 @@ Instructions:
 - Use clear, educational language that builds understanding progressively.
 
 Control:
-- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
+- You may transfer control to any other agent (Developer, Summarizer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
 - If you can fully answer the query, do so directly.
 """
 
@@ -70,7 +70,7 @@ Instructions:
 - Create memorable analogies that make abstract concepts concrete.
 
 Control:
-- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
+- You may transfer control to any other agent (Developer, Summarizer, Explainer, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
 - If you can fully answer the query, do so directly.
 """
 
@@ -90,6 +90,6 @@ Instructions:
 - Be constructive rather than dismissive in your analysis.
 
 Control:
-- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator, Vulnerability Expert) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
+- You may transfer control to any other agent (Developer, Summarizer, Explainer, Analogy Creator) using the handoff tools if you believe another agent is better suited to answer the next part of the query.
 - If you can fully answer the query, do so directly.
 """
