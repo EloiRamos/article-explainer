@@ -1,3 +1,5 @@
+<div align="center">
+
 # Article Explainer
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
@@ -12,6 +14,8 @@
 An intelligent document analysis tool that transforms complex technical articles into easily understandable explanations using a team of specialized AI agents. Built with LangGraph Swarm Architecture, this application demonstrates how multiple AI agents can collaborate to provide comprehensive document analysis, analogies, summaries, and technical breakdowns.
 
 [Quick Start](#quick-start) • [Features](#features) • [Usage](#usage) • [Development](#development)
+
+</div>
 
 ---
 
@@ -35,13 +39,13 @@ An intelligent document analysis tool that transforms complex technical articles
 
 <div align="center">
 
-| Core Functionality | AI Agents | Technical |
-|:---:|
-| PDF Upload & Processing | Summarizer Agent | Real-time Processing |
-| Interactive Chat Interface | Explainer Agent | LangGraph Swarm Architecture |
-| Integrated PDF Viewer | Analogy Creator | Privacy-First Design |
-| Multi-turn Conversations | Developer Agent | Web-based Interface |
-| Document Structure Analysis | Vulnerability Expert | Docker Support |
+|     Core Functionality      |      AI Agents       | Technical                    |
+| :-------------------------: | :------------------: |
+|   PDF Upload & Processing   |   Summarizer Agent   | Real-time Processing         |
+| Interactive Chat Interface  |   Explainer Agent    | LangGraph Swarm Architecture |
+|    Integrated PDF Viewer    |   Analogy Creator    | Privacy-First Design         |
+|  Multi-turn Conversations   |   Developer Agent    | Web-based Interface          |
+| Document Structure Analysis | Vulnerability Expert | Docker Support               |
 
 </div>
 
@@ -104,6 +108,7 @@ An intelligent document analysis tool that transforms complex technical articles
 6. **Open your browser** and navigate to `http://localhost:8501`
 
 ## Usage
+
 ### Basic Workflow
 
 1. **Upload a PDF** using the sidebar file uploader
@@ -132,7 +137,7 @@ The Article Explainer uses a sophisticated multi-agent architecture built on Lan
 │   & Processing  │    │  & Text Extract │    │   Processing    │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
                                                         │
-┌───────────────────────────────┼────────────────────────────────────────────────────────┐
+┌───────────────────────────────────────┼────────────────────────────────────────────────────────┐
 │                                                      │                                                        │
 │                    ┌─────────────────┐               │               ┌─────────────────┐                    │
 │                    │   LangGraph     │               │               │   Streamlit     │                    │
@@ -174,7 +179,7 @@ article-explainer/
 ├── config/              # Configuration management
 │   ├── settings.py      # Pydantic settings with validation
 │   └── __init__.py
-c├── data/                # Project data and assets
+├── data/                # Project data and assets
 │   ├── sample_pdfs/     # Example PDF documents
 │   └── screenshots/     # Application screenshots
 ├── docs/                # Documentation
@@ -229,10 +234,10 @@ pre-commit run --all-files
 
 ### AI Model Options
 
-| Provider | Model | Setup | Privacy | Speed | Cost |
-|----------|-------|---------|-------|------|
-| **OpenAI** | GPT-4o-mini | API Key | Cloud | Fast | Pay-per-use |
-| **Ollama** | Qwen3:4b | Local Install | Private | Local | Free |
+| Provider   | Model       | Setup         | Privacy | Speed | Cost        |
+| ---------- | ----------- | ------------- | ------- | ----- | ----------- |
+| **OpenAI** | GPT-4o-mini | API Key       | Cloud   | Fast  | Pay-per-use |
+| **Ollama** | Qwen3:4b    | Local Install | Private | Local | Free        |
 
 ### System Requirements
 
