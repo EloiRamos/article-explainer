@@ -66,7 +66,7 @@ An intelligent document analysis tool that transforms complex technical articles
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/article-explainer.git
+   git clone https://github.com/EloiRamos/article-explainer.git
    cd article-explainer
    ```
 
@@ -279,6 +279,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with love by AI enthusiasts**
 
-[Star this repo](https://github.com/your-username/article-explainer) | [Report Issues](https://github.com/your-username/article-explainer/issues) | [Discussions](https://github.com/your-username/article-explainer/discussions)
+[Star this repo](https://github.com/EloiRamos/article-explainer) | [Report Issues](https://github.com/EloiRamos/article-explainer/issues) | [Discussions](https://github.com/EloiRamos/article-explainer/discussions)
 
 </div>
