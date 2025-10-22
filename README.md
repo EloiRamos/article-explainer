@@ -45,7 +45,7 @@ export OPENAI_API_KEY="your-api-key-here"
 
 ### Usage
 
-#### Docker 
+#### Docker
 
 1. Build and run with Docker Compose:
 
