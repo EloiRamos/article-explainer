@@ -1,6 +1,9 @@
 <div align="center">
 
-# Article Explainer
+# 🤖 Article Explainer
+### AI-Powered Document Analysis with Multi-Agent Intelligence
+
+Transform complex technical documents into crystal-clear insights using a **team of specialized AI agents** working in perfect harmony.
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.50.0-red?logo=streamlit&logoColor=white)](https://streamlit.io/)
@@ -9,280 +12,301 @@
 [![Ollama](https://img.shields.io/badge/Ollama-Ready-purple?logo=ollama&logoColor=white)](https://ollama.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**AI-Powered Document Analysis with Multi-Agent Intelligence**
-
-An intelligent document analysis tool that transforms complex technical articles into easily understandable explanations using a team of specialized AI agents. Built with LangGraph Swarm Architecture, this application demonstrates how multiple AI agents can collaborate to provide comprehensive document analysis, analogies, summaries, and technical breakdowns.
-
-[Quick Start](#quick-start) • [Features](#features) • [Usage](#usage) • [Development](#development)
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🏗️ Architecture](#-architecture) • [🤝 Contributing](#-contributing)
 
 </div>
 
 ---
 
-## What Makes This Special
+## 🎯 The Problem & Our Solution
 
-**Multi-Agent Intelligence**: Instead of a single AI model, this application uses a team of specialized agents that collaborate to provide nuanced, comprehensive explanations.
+Ever struggled to understand a dense technical paper? Wrestling with complex documentation? Drowning in jargon?
 
-**Local & Cloud Ready**: Works with both OpenAI's powerful models and local Ollama instances for maximum flexibility and privacy.
+**Article Explainer** flips the script. Instead of fighting through walls of text, you upload a PDF and get **five specialized AI agents** working together to illuminate every angle—summaries, analogies, code examples, technical deep-dives, and security considerations.
 
-**Interactive PDF Analysis**: Upload any PDF and engage in a conversation about its content with AI agents that understand context and can provide explanations at multiple levels.
+It's like having a dream team of experts in your pocket. 🎯
 
-## Application Screenshots
+---
 
-### Usage Explanation and Interface
-![Usage Explanation and Interface](data/screenshots/img.png)
+## ✨ What Makes This Special
 
-### Article Explainer Main Interface
-![Article Explainer Main Interface](data/screenshots/main_interface.png)
+### 🧠 Multi-Agent Intelligence
+Not one AI, but **five specialized agents** that collaborate and hand off tasks intelligently. Each brings unique expertise:
+- **Summarizer** → Distills complexity into clarity
+- **Explainer** → Breaks down concepts step-by-step  
+- **Analogy Creator** → Makes the abstract tangible
+- **Developer** → Provides working code examples
+- **Vulnerability Expert** → Surfaces risks & considerations
 
-## Features
+### 🌐 Flexible & Private
+Run with **OpenAI's cutting-edge models** for maximum power, or keep everything **local with Ollama** for complete privacy. Your choice.
 
-<div align="center">
+### 💬 Conversational Context
+Ask follow-ups, dig deeper, ask "why?"—the agents maintain full document context across the entire conversation.
 
-|     Core Functionality      |      AI Agents       | Technical                    |
-| :-------------------------: | :------------------: |
-|   PDF Upload & Processing   |   Summarizer Agent   | Real-time Processing         |
-| Interactive Chat Interface  |   Explainer Agent    | LangGraph Swarm Architecture |
-|    Integrated PDF Viewer    |   Analogy Creator    | Privacy-First Design         |
-|  Multi-turn Conversations   |   Developer Agent    | Web-based Interface          |
-| Document Structure Analysis | Vulnerability Expert | Docker Support               |
+---
 
-</div>
+## 📸 See It In Action
 
-### Key Capabilities
+![Usage Explanation](data/screenshots/img.png)
+![Main Interface](data/screenshots/main_interface.png)
 
-- **Document Understanding**: Upload PDFs and ask questions about their content
-- **Multi-Expert Analysis**: Five specialized AI agents collaborate to provide comprehensive explanations
-- **Agent Handoffs**: Agents intelligently transfer control to provide the best expertise for each query
-- **Context Preservation**: Maintains document context throughout conversations
-- **Fast Processing**: Optimized for quick document analysis and response generation
-- **Privacy Focused**: Option to run entirely locally with Ollama
+---
 
-## Quick Start
+## 🎁 Core Features
+
+| 🎯 Capability                  | 💡 Powered By          | 🛠️ Built With        |
+| ----------------------------- | --------------------- | ------------------- |
+| Upload & analyze PDFs         | Document Intelligence | PyPDF2, LangChain   |
+| Ask questions naturally       | LLM Understanding     | GPT-4o or Ollama    |
+| Get expert perspectives       | Multi-Agent Swarm     | LangGraph Swarm     |
+| Maintain conversation history | Context Preservation  | Vector embeddings   |
+| Real-time responses           | Optimized Processing  | Async/await         |
+| Private or cloud-based        | Flexible Deployment   | OpenAI API or Local |
+
+### What You Can Do
+
+```
+📝 "Summarize this in 3 bullet points"
+   → Instant, crystal-clear summary
+
+🧮 "Explain using simple analogies"  
+   → Complex ideas become obvious
+
+💻 "Show me code examples"
+   → Production-ready implementations
+
+🔒 "Any security concerns?"
+   → Expert vulnerability analysis
+
+🤔 "What's the key innovation?"
+   → Technical breakdown & context
+
+📊 "Give me a TL;DR with the main arguments"
+   → High-level executive summary
+```
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
+- **Python 3.9+** (3.11+ recommended)
+- **Ollama** (optional, for local AI) or OpenAI API key
+- **Git**
 
-- Python 3.9+
-- [Ollama](https://ollama.com/) (for local AI) or OpenAI API key
-- Git
+### Installation (5 minutes)
 
-### Installation
+```bash
+# 1️⃣ Clone the repo
+git clone https://github.com/EloiRamos/article-explainer.git
+cd article-explainer
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/EloiRamos/article-explainer.git
-   cd article-explainer
-   ```
+# 2️⃣ Install dependencies
+pip install -r requirements.txt
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-
-   Edit `.env` with your configuration:
-   ```bash
-   # For OpenAI (recommended for best results)
-   OPENAI_API_KEY="your-openai-api-key-here"
-
-   # OR for local Ollama (privacy-first)
-   # OLLAMA_BASE_URL="http://localhost:11434"
-   # OLLAMA_MODEL="qwen3:4b"
-   ```
-
-4. **Start Ollama (if using local AI)**
-   ```bash
-   ollama pull qwen3:4b
-   ollama serve
-   ```
-
-5. **Launch the application**
-   ```bash
-   streamlit run article_explainer_page.py
-   ```
-
-6. **Open your browser** and navigate to `http://localhost:8501`
-
-## Usage
-
-### Basic Workflow
-
-1. **Upload a PDF** using the sidebar file uploader
-2. **Wait for processing** - the AI will analyze the document structure and content
-3. **Start chatting** - ask questions about the document content
-4. **Get expert responses** - the agent team will provide detailed explanations, summaries, analogies, or technical breakdowns
-
-### Example Queries
-
-Try asking the Article Explainer:
-
-- *"Summarize this document in 3 bullet points"*
-- *"Explain the most complex concepts using simple analogies"*
-- *"What are the key technical innovations described here?"*
-- *"Give me a TL;DR with the main arguments"*
-- *"Are there any security considerations mentioned?"*
-- *"Provide code examples for the concepts discussed"*
-
-## Architecture
-
-The Article Explainer uses a sophisticated multi-agent architecture built on LangGraph Swarm:
-
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   PDF Upload    │───▶│  Content Loader  │───▶│   Document      │
-│   & Processing  │    │  & Text Extract │    │   Processing    │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                                                         │
-┌─────────────────────────────────────────────────┐
-│                                                                 │
-│                    ┌─────────────────┐         ┌─────────────────┐
-│                    │   LangGraph     │         │   Streamlit     │
-│                    │     Swarm       │────────▶│   Web Interface │
-│                    │  Architecture   │         │                 │
-│                    └─────────────────┘         └─────────────────┘
-                              │
-                    ┌─────────────────┐         ┌─────────────────┐
-                    │   Summarizer    │         │   Developer     │
-                    │     Agent       │         │     Agent       │
-                    └─────────────────┘         └─────────────────┘
-                              │
-                    ┌─────────────────┐         ┌─────────────────┐
-                    │   Explainer     │         │ Vulnerability   │
-                    │     Agent       │         │    Expert       │
-                    └─────────────────┘         └─────────────────┘
-                              │
-                    ┌─────────────────┐
-                    │ Analogy Creator │
-                    │     Agent       │
-                    └─────────────────┘
+# 3️⃣ Set up environment
+cp .env.example .env
+# Edit .env with your OpenAI key OR Ollama URL
 ```
 
-### Agent Roles
+### Configuration
 
-- **Summarizer**: Provides concise summaries and key points
-- **Explainer**: Breaks down complex concepts step-by-step
-- **Analogy Creator**: Creates relatable analogies and metaphors
-- **Developer**: Provides code examples and technical implementations
-- **Vulnerability Expert**: Analyzes potential weaknesses and security considerations
+**Option A: Cloud-Powered (OpenAI)**
+```bash
+# .env
+OPENAI_API_KEY="sk-..."
+```
 
-## Development
+**Option B: Privacy-First (Local Ollama)**
+```bash
+# Terminal 1: Start Ollama
+ollama pull qwen3:4b
+ollama serve
 
-### Project Structure
+# .env
+OLLAMA_BASE_URL="http://localhost:11434"
+OLLAMA_MODEL="qwen3:4b"
+```
+
+### Launch
+
+```bash
+streamlit run article_explainer_page.py
+```
+
+Open `http://localhost:8501` and start analyzing! 🎉
+
+---
+
+## 🏗️ Architecture
+
+Under the hood, this is elegantly orchestrated:
+
+```
+┌──────────────────────────────────────────────────────┐
+│           Streamlit Web Interface                    │
+│        (PDF Upload, Chat, Real-time UI)              │
+└──────────────────┬───────────────────────────────────┘
+                   │
+                   ▼
+┌──────────────────────────────────────────────────────┐
+│         LangGraph Swarm Orchestrator                 │
+│     (Intelligent Agent Routing & Handoffs)           │
+└──────────────────┬───────────────────────────────────┘
+                   │
+        ┌──────────┼──────────┬──────────┬─────────┐
+        ▼          ▼          ▼          ▼         ▼
+   ┌─────────┐┌─────────┐┌─────────┐┌─────────┐┌──────────┐
+   │Summariz.││Explainer││Analogy  ││Developer││Vulnerab. │
+   │ Agent   ││ Agent   ││Creator  ││ Agent   ││  Expert  │
+   └─────────┘└─────────┘└─────────┘└─────────┘└──────────┘
+        │          │          │          │         │
+        └──────────┼──────────┴──────────┴─────────┘
+                   ▼
+        ┌──────────────────────┐
+        │  LLM Provider        │
+        │ (OpenAI or Ollama)   │
+        └──────────────────────┘
+```
+
+### How It Works
+
+1. **You upload a PDF** → App extracts text & builds document context
+2. **You ask a question** → Orchestrator routes to best-fit agent(s)
+3. **Agents collaborate** → They can hand off to each other as needed
+4. **You get insight** → Detailed, multi-perspective response
+5. **Conversation continues** → Full context preserved for follow-ups
+
+---
+
+## 📁 Project Structure
 
 ```
 article-explainer/
-├── config/              # Configuration management
-│   ├── settings.py      # Pydantic settings with validation
-│   └── __init__.py
-├── data/                # Project data and assets
-│   ├── sample_pdfs/     # Example PDF documents
-│   └── screenshots/     # Application screenshots
-├── docs/                # Documentation
-├── explainer/           # Core AI agent logic
-│   ├── service/         # Utilities and services
-│   ├── graph.py         # Multi-agent orchestration
-│   └── prompts.py       # Agent system prompts
-├── logs/                # Application logs
-├── tests/               # Unit and integration tests
+├── .env.example              # Environment variables template
+├── .pre-commit-config.yaml   # Pre-commit hooks configuration
+├── .gitignore               # Git ignore patterns
 ├── article_explainer_page.py # Main Streamlit application
-├── pyproject.toml       # Project configuration
-├── .env.example         # Environment template
-├── logging.conf         # Logging configuration
-└── README.md           # This file
+├── pyproject.toml           # Python project configuration
+├── requirements.txt         # Python dependencies
+├── uv.lock                  # UV package manager lock file
+├── pytest.ini              # Test configuration
+├── logging.conf             # Logging configuration
+├── Makefile                 # Build automation
+├── Dockerfile               # Docker container configuration
+├── docker-compose.yml       # Docker Compose configuration
+├── LICENSE                  # MIT License file
+├── README.md                # Project documentation
+├── config/                  # Configuration management
+│   ├── settings.py          # Pydantic settings with validation
+│   └── __init__.py
+├── data/                    # Project data and assets
+│   ├── sample_pdfs/         # Example PDF documents
+│   │   ├── DeepSeek-OCR.pdf
+│   │   └── transformer_paper.pdf
+│   └── screenshots/         # Application UI screenshots
+│       ├── img.png
+│       └── main_interface.png
+├── docs/                    # Documentation files
+│   └── small_language_models.pdf
+├── explainer/               # Core AI agent logic
+│   ├── service/             # Utilities and services
+│   │   ├── config.py
+│   │   └── content_loader.py
+│   ├── graph.py             # Multi-agent orchestration
+│   ├── prompts.py           # Agent system prompts
+│   └── __init__.py
+├── logs/                    # Application logs
+│   └── app.log
+└── tests/                   # Test suite
+    ├── __init__.py
+    ├── conftest.py
+    └── test_config.py
 ```
 
-### Testing
+---
 
+## ⚙️ Development
+
+### Run Tests
 ```bash
-# Run all tests
-pytest
-
-# Run with coverage
+# All tests with coverage
 pytest --cov=explainer --cov-report=html
 
-# Run specific tests
-pytest tests/test_config.py
+# Watch mode (on file changes)
+pytest-watch
 ```
 
 ### Code Quality
-
 ```bash
-# Format code
+# Format
 black .
 
-# Lint code
-ruff check .
+# Lint
+ruff check . --fix
 
-# Type checking
+# Type check
 mypy .
 
-# Pre-commit hooks
+# Pre-commit
 pre-commit run --all-files
 ```
 
-## Performance & Compatibility
+---
 
-### Supported File Types
-- PDF documents (primary support)
-- Text extraction from complex layouts
-- Multi-page document processing
+## 🔧 Performance & Compatibility
 
 ### AI Model Options
 
-| Provider   | Model       | Setup         | Privacy | Speed | Cost        |
-| ---------- | ----------- | ------------- | ------- | ----- | ----------- |
-| **OpenAI** | GPT-4o-mini | API Key       | Cloud   | Fast  | Pay-per-use |
-| **Ollama** | Qwen3:4b    | Local Install | Private | Local | Free        |
+| Provider   | Model       | Privacy | Speed    | Best For                       |
+| ---------- | ----------- | ------- | -------- | ------------------------------ |
+| **OpenAI** | GPT-4o-mini | Cloud   | ⚡⚡⚡ Fast | Production, complex docs       |
+| **Ollama** | Qwen3:4b    | Local   | ⚡ Medium | Privacy-sensitive, development |
 
 ### System Requirements
 
 - **Minimum**: Python 3.9+, 4GB RAM, 2GB storage
-- **Recommended**: Python 3.11+, 8GB RAM, 5GB storage, GPU (for Ollama)
+- **Recommended**: Python 3.11+, 8GB+ RAM, GPU (for Ollama)
 
-## Contributing
+### Supported Formats
 
-We welcome contributions! Here's how you can help:
+- ✅ PDF (primary, optimized for multi-page)
+- ✅ Complex layouts & scanned documents
+- 🔄 Coming: DOCX, TXT, Markdown
 
-### Development Setup
+---
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes and add tests
-4. Ensure all tests pass: `pytest`
-5. Commit your changes: `git commit -m 'Add amazing feature'`
-6. Push to the branch: `git push origin feature/amazing-feature`
-7. Open a Pull Request
+## 📊 Real-World Use Cases
 
-### Contribution Ideas
+- **📚 Academic Research** → Understand papers faster, explore concepts deeply
+- **💼 Technical Documentation** → Parse complex specs and APIs  
+- **🔐 Security Reviews** → Vulnerability analysis on technical docs
+- **📖 Learning & Onboarding** → New team members master concepts faster
+- **🏢 Compliance** → Digest regulatory documents with context
+- **🚀 Product Research** → Quickly understand competitor tech
 
-- [ ] Add support for more document formats (DOCX, TXT, etc.)
-- [ ] Implement document comparison features
-- [ ] Add export functionality (PDF reports, summaries)
-- [ ] Create a mobile-responsive interface
-- [ ] Add support for multiple languages
-- [ ] Implement document versioning and history
+---
 
-## License
+## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License — Use freely, modify, distribute. See [LICENSE](LICENSE).
 
-## Acknowledgments
+---
 
-- **LangChain** for the powerful LangGraph and Swarm architectures
-- **Streamlit** for the amazing web interface framework
-- **Ollama** for making local AI accessible
-- **OpenAI** for advancing AI capabilities
+## 🙏 Built On Giants
+
+- **LangChain & LangGraph** – The agent orchestration backbone
+- **Streamlit** – Beautiful interfaces with Python
+- **Ollama** – Local AI made simple
+- **OpenAI** – Frontier AI models
 
 ---
 
 <div align="center">
 
-**Made with love by AI enthusiasts**
+**Made with ❤️ by AI engineers, for AI engineers**
 
-[Star this repo](https://github.com/EloiRamos/article-explainer) | [Report Issues](https://github.com/EloiRamos/article-explainer/issues) | [Discussions](https://github.com/EloiRamos/article-explainer/discussions)
+*Transform complexity into clarity. One document at a time.*
 
 </div>
