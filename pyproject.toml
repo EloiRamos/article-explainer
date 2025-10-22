@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "article-explainer"
+version = "0.1.0"
+description = "AI-Powered Document Analysis with Multi-Agent Intelligence"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "EloiRamos", email = "eloi@example.com"}]
+license = {text = "MIT"}
+keywords = ["ai", "document-analysis", "pdf", "langgraph", "streamlit"]
+
+[project.urls]
+Homepage = "https://github.com/EloiRamos/article-explainer"
+Repository = "https://github.com/EloiRamos/article-explainer"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "pytest-asyncio>=0.21",
+]
+development = [
+    "black>=23.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+    "pre-commit>=3.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["article_explainer*", "explainer*", "config*"]
+
+[tool.black]
+line-length = 88
+skip-string-normalization = true
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.ruff]
+select = ["E", "W", "F", "I", "C", "B", "UP"]
+line-length = 88
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
