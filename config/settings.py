@@ -1,8 +1,9 @@
 from pydantic_settings import BaseSettings
 from typing import Optional
 
+
 class Settings(BaseSettings):
-    ""Application settings with validation."""
+    """Application settings with validation."""
 
     # OpenAI Configuration
     openai_api_key: Optional[str] = None
